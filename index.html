@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d342b">
+  <title>نور | رفيق المسلم اليومي</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-root">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="نور - الرئيسية"><span class="brand-mark">☾</span><span><strong>نُور</strong><small>رفيق المسلم اليومي</small></span></a>
+      <nav class="main-nav" aria-label="القائمة الرئيسية">
+        <button class="nav-link active" data-view="home">الرئيسية</button>
+        <button class="nav-link" data-view="quran">القرآن الكريم</button>
+        <button class="nav-link" data-view="hadith">الأحاديث</button>
+        <button class="nav-link" data-view="adhkar">الأذكار</button>
+        <button class="nav-link" data-view="favorites">المفضلة</button>
+      </nav>
+      <div class="top-actions"><button id="themeToggle" class="icon-btn" aria-label="تغيير المظهر" title="تغيير المظهر">☼</button><button id="accountButton" class="account-btn">دخول / حساب جديد</button><button id="menuToggle" class="icon-btn menu-toggle" aria-label="فتح القائمة">☰</button></div>
+    </header>
+
+    <main>
+      <section id="homeView" class="view active-view">
+        <section class="hero">
+          <div class="hero-pattern" aria-hidden="true"></div>
+          <div class="hero-content"><span class="eyebrow">وَقُل رَّبِّ زِدْنِي عِلْمًا</span><h1>اجعل لقلبك <em>نصيبًا من النور</em></h1><p>مساحة هادئة لقراءة القرآن، والتعرّف على الأحاديث النبوية، والمحافظة على الأذكار اليومية.</p><div class="hero-actions"><button class="primary-btn" data-go="quran">ابدأ قراءة القرآن <span>←</span></button><button class="ghost-btn" data-go="adhkar">أذكار اليوم</button></div></div>
+          <div class="hero-art" aria-hidden="true"><div class="ornament outer"></div><div class="ornament inner"></div><div class="crescent">☾</div><div class="art-star star-one">✦</div><div class="art-star star-two">✧</div><div class="art-caption">آية اليوم <span>﴿ إِنَّ مَعَ الْعُسْرِ يُسْرًا ﴾</span><small>سورة الشرح · ٦</small></div></div>
+        </section>
+
+        <section class="section-heading"><div><span class="eyebrow">رحلتك اليومية</span><h2>ماذا تحب أن تقرأ اليوم؟</h2></div><p>اختر بابًا وابدأ على مهل</p></section>
+        <section class="feature-grid">
+          <button class="feature-card quran-card" data-go="quran"><span class="feature-icon">۞</span><span class="card-kicker">تلاوة وتدبّر</span><strong>القرآن الكريم</strong><span class="card-desc">تصفّح السور والآيات وابحث عن موضع تحبه.</span><span class="card-arrow">←</span></button>
+          <button class="feature-card hadith-card" data-go="hadith"><span class="feature-icon">❞</span><span class="card-kicker">من هدي النبي ﷺ</span><strong>الأحاديث النبوية</strong><span class="card-desc">اقرأ أحاديث مع ذكر المصدر ودرجة الحديث عند توفرها.</span><span class="card-arrow">←</span></button>
+          <button class="feature-card adhkar-card" data-go="adhkar"><span class="feature-icon">◉</span><span class="card-kicker">طمأنينة وذكر</span><strong>الأذكار اليومية</strong><span class="card-desc">أذكار الصباح والمساء والنوم وبعد الصلاة.</span><span class="card-arrow">←</span></button>
+        </section>
+
+        <section class="daily-quote"><div class="quote-symbol">❝</div><div><span class="eyebrow">تذكير لطيف</span><p>الخطوات الصغيرة المستمرة تصنع أثرًا طيبًا بإذن الله.</p><small>ابدأ بما تستطيع، وداوم عليه.</small></div><span class="quote-leaf">✧</span></section>
+        <section class="section-heading compact-heading"><div><span class="eyebrow">للوصول السريع</span><h2>ابحث في المكتبة</h2></div></section>
+        <form class="search-box home-search" id="globalSearch"><span>⌕</span><input id="globalSearchInput" type="search" placeholder="ابحث عن آية أو حديث أو ذكر..." aria-label="بحث في المكتبة"><button type="submit">بحث</button></form>
+        <p class="content-note">تنبيه: هذه نسخة أولية تجريبية تحتوي على محتوى محدود للتجربة، وليست مكتبة دينية كاملة. يُرجى مراجعة النصوص ومصادرها قبل اعتماد الموقع للنشر العام.</p>
+      </section>
+
+      <section id="quranView" class="view content-view">
+        <div class="page-title"><div><span class="eyebrow">كلام الله تعالى</span><h1>القرآن الكريم</h1><p>تصفّح السور وابحث عن آية.</p></div><span class="page-emblem">۞</span></div>
+        <form class="search-box" id="quranSearch"><span>⌕</span><input id="quranSearchInput" type="search" placeholder="اكتب اسم السورة أو كلمة من الآية"><button type="submit">بحث</button></form>
+        <div id="surahList" class="surah-grid"></div><div id="quranResults" class="results-list"></div>
+        <p class="content-note">النصوص المعروضة هنا عيّنة محدودة لواجهة الموقع؛ يجب استيراد نص القرآن كاملًا من مصدر موثوق ومراجعته قبل النشر.</p>
+      </section>
+
+      <section id="hadithView" class="view content-view">
+        <div class="page-title"><div><span class="eyebrow">من السنة النبوية</span><h1>الأحاديث النبوية</h1><p>اقرأ وتدبّر، وتحقّق من المصدر.</p></div><span class="page-emblem">❞</span></div>
+        <form class="search-box" id="hadithSearch"><span>⌕</span><input id="hadithSearchInput" type="search" placeholder="ابحث في نص الحديث أو مصدره"><button type="submit">بحث</button></form>
+        <div id="hadithList" class="reading-list"></div>
+        <p class="content-note">يظهر مصدر الحديث في كل بطاقة. يلزم استكمال مراجعة التخريج والدرجات وإضافة مكتبة موثّقة قبل الإطلاق.</p>
+      </section>
+
+      <section id="adhkarView" class="view content-view">
+        <div class="page-title"><div><span class="eyebrow">ذكر يطمئن القلب</span><h1>الأذكار</h1><p>اختر قسمًا، ثم اضغط على الذكر لعدّ مرات تكراره.</p></div><span class="page-emblem">◉</span></div>
+        <div class="filter-pills" id="adhkarFilters"><button class="pill active" data-category="الكل">الكل</button><button class="pill" data-category="الصباح">الصباح</button><button class="pill" data-category="المساء">المساء</button><button class="pill" data-category="بعد الصلاة">بعد الصلاة</button></div>
+        <div id="adhkarList" class="reading-list"></div>
+        <p class="content-note">عداد التكرار للتجربة داخل الصفحة. تُراجع نصوص الأذكار وعدد مرات تكرارها ومصادرها قبل نشر المكتبة كاملة.</p>
+      </section>
+
+      <section id="favoritesView" class="view content-view">
+        <div class="page-title"><div><span class="eyebrow">ما احتفظت به</span><h1>المفضلة</h1><p>اجمع الآيات والأحاديث والأذكار التي تريد الرجوع إليها.</p></div><span class="page-emblem">♡</span></div>
+        <div id="favoritesList" class="reading-list"></div>
+        <p class="content-note">المفضلة في النسخة التجريبية تُحفظ على هذا المتصفح فقط. بعد ربط الحساب بالخادم ستُحفظ لكل مستخدم في قاعدة البيانات.</p>
+      </section>
+    </main>
+
+    <footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">☾</span><span><strong>نُور</strong><small>رفيق المسلم اليومي</small></span></a><p>اللهم اجعل هذا العمل نافعًا، وارزقنا الإخلاص والقبول.</p><small>© نور — نسخة تجريبية</small></footer>
+  </div>
+
+  <dialog id="accountDialog" class="account-dialog"><form method="dialog" class="dialog-close-row"><button class="icon-btn" aria-label="إغلاق">×</button></form><div class="dialog-head"><span class="brand-mark">☾</span><h2>مرحبًا بك في نور</h2><p>تسجيل الحساب سيُفعّل عند تشغيل الـ Backend.</p></div><form id="accountForm" class="account-form"><label>البريد الإلكتروني<input type="email" id="emailInput" placeholder="name@example.com" required></label><label>كلمة المرور<input type="password" id="passwordInput" minlength="8" placeholder="٨ أحرف على الأقل" required></label><button class="primary-btn full-btn" type="submit">تجربة تسجيل الدخول</button><p id="accountMessage" class="form-message"></p></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

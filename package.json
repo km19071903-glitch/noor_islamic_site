@@ -1,0 +1,21 @@
+{
+  "name": "noor-islamic-site",
+  "version": "1.0.0",
+  "description": "Arabic Islamic website starter for Quran, Hadith and Adhkar with frontend and backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^13.0.3",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "helmet": "^8.0.0",
+    "sqlite3": "^6.0.1"
+  }
+}
