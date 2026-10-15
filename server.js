@@ -109,4 +109,4 @@ app.delete('/api/favorites/:id', requireUser, (req, res) => {
 });
 app.get('/api/library/status', (req, res) => res.json({ status: 'starter', note: 'مكتبة المحتوى الكاملة غير مضافة بعد. يجب استيراد نصوص موثقة من مصادر موثوقة ومراجعتها قبل النشر.' }));
 app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
-app.listen(PORT, () => console.log(`Noor is running at http://localhost:${PORT}`));
+module.exports = app;
